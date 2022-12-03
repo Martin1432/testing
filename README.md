@@ -1,1 +1,1 @@
-Yaml file repository for installing httpd and mysql
+Yaml file repository for installing httpd and mysql.
