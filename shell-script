@@ -25,26 +25,4 @@ backup_file() {
      local BACKUP_FIILE="/var/tmp/$(basename ${FILE}).$(date +%F-%N)"
      log "Backing up ${FILE} to ${BACKUP_FILE}."
 
-#The exit status of the function will be the exit status of the cp command. -p to preserver the date and timestamp of the original fil
-
-  cp -p ${FILE} ${BACKUP_FILE}
-else
-
-#The file does not exist, So return a non-zero exit status
-return 1
-fi
-}
-readonly VERBOSE="false"
-log  'Hello..'
-log  'This is great..'
-
-backup_file '/etc/passwd'
-
-#Make a decision based on the exit status of the function.
-if [[ ${?} -eq '0' ]]
- then
-   echo "File backup succeeded"
-else
-   echo "File backup failed"
-exit 1
-fi
+#The exit status of the function will be the exit status of the cp command. -p to preserver the date and timestamp of the original fi
