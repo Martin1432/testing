@@ -1,0 +1,21 @@
+- name: To install httpd
+  tasks:
+      - yum:
+        name: 
+               - httpd
+               - mysql 
+        state: present
+
+      - service:
+              name: 
+                 - httpd
+                 - firewalld
+              state: restarted
+              enabled: yes
+
+      - firewalld:
+        service: http
+        permanent: yes
+        state: restarted
+        enabled: yes
+
